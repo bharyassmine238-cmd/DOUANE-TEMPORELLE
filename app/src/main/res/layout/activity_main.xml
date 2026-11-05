@@ -16,7 +16,7 @@
         android:src="@drawable/fond_voyage" />
 
     <ScrollView
-        android:id="@+id/main"
+        android:id="@+id/main_yb"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
@@ -30,7 +30,7 @@
 
             <!-- titre -->
             <TextView
-                android:id="@+id/tv_titre_xx"
+                android:id="@+id/tv_titre_yb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -41,7 +41,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_sous_titre_xx"
+                android:id="@+id/tv_sous_titre_yb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:letterSpacing="0.05"
@@ -57,7 +57,7 @@
                 android:background="@color/jaune_douane" />
 
             <TextView
-                android:id="@+id/tv_slogan_xx"
+                android:id="@+id/tv_slogan_yb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -67,7 +67,7 @@
 
             <!-- image -->
             <ImageView
-                android:id="@+id/img_voyage_xx"
+                android:id="@+id/img_voyage_yb"
                 android:layout_width="match_parent"
                 android:layout_height="419dp"
                 android:layout_marginTop="20dp"
@@ -93,7 +93,7 @@
 
                     <!--nom  -->
                     <TextView
-                        android:id="@+id/tv_label_nom_xx"
+                        android:id="@+id/tv_label_nom_yb"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:letterSpacing="0.1"
@@ -103,7 +103,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/et_nom_xx"
+                        android:id="@+id/et_nom_yb"
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
                         android:layout_marginTop="8dp"
@@ -117,7 +117,7 @@
 
                     <!-- 5 : حقل سنة الميلاد -->
                     <TextView
-                        android:id="@+id/tv_label_naissance_xx"
+                        android:id="@+id/tv_label_naissance_yb"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -128,7 +128,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/et_naissance_xx"
+                        android:id="@+id/et_naissance_yb"
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
                         android:layout_marginTop="8dp"
@@ -143,7 +143,7 @@
 
                     <!-- l3am li mechinlo -->
                     <TextView
-                        android:id="@+id/tv_label_destination_xx"
+                        android:id="@+id/tv_label_destination_yb"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -154,7 +154,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/et_destination_xx"
+                        android:id="@+id/et_destination_yb"
                         android:layout_width="match_parent"
                         android:layout_height="52dp"
                         android:layout_marginTop="8dp"
@@ -169,7 +169,7 @@
 
                     <!-- sbab esafar -->
                     <TextView
-                        android:id="@+id/tv_label_motif_xx"
+                        android:id="@+id/tv_label_motif_yb"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
@@ -180,7 +180,7 @@
                         android:textStyle="bold" />
 
                     <RadioGroup
-                        android:id="@+id/rg_motif_xx"
+                        android:id="@+id/rg_motif_yb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -189,7 +189,7 @@
                         android:padding="8dp">
 
                         <RadioButton
-                            android:id="@+id/rb_tourisme_xx"
+                            android:id="@+id/rb_tourisme_yb"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/jaune_douane"
@@ -198,7 +198,7 @@
                             android:textColor="@color/texte_douane" />
 
                         <RadioButton
-                            android:id="@+id/rb_modification_xx"
+                            android:id="@+id/rb_modification_yb"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/jaune_douane"
@@ -206,7 +206,7 @@
                             android:textColor="@color/texte_douane" />
 
                         <RadioButton
-                            android:id="@+id/rb_fuite_xx"
+                            android:id="@+id/rb_fuite_yb"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/jaune_douane"
@@ -216,7 +216,7 @@
 
                     <!-- bouton -->
                     <Button
-                        android:id="@+id/btn_inspecter_xx"
+                        android:id="@+id/btn_inspecter_yb"
                         android:layout_width="match_parent"
                         android:layout_height="56dp"
                         android:layout_marginTop="24dp"
