@@ -1,0 +1,197 @@
+
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Activité 2 (yass): Vérification du voyageur temporel -->
+
+<!-- Layout principal horizontal : image aalisar w les info aalimin -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_verification_yb"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="12dp"
+    android:background="@color/fond_douane">
+
+    <!-- Image gauche : 0.3 -->
+    <ImageView
+        android:id="@+id/img_passport_yb"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="Image du passeport temporel"
+        android:scaleType="centerCrop"
+        android:src="@drawable/image_voyage" />
+
+    <!-- Partie droite : 0.7 -->
+    <RelativeLayout
+        android:id="@+id/zone_informations_yb"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:background="@drawable/bgcartedouane"
+        android:padding="12dp">
+
+        <!-- Défilement des informations si l'écran est petit -->
+        <ScrollView
+            android:id="@+id/scroll_verification_yb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/contenu_verification_yb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- titre -->
+                <TextView
+                    android:id="@+id/tv_titre_verification_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CONTRÔLE TEMPOREL"
+                    android:textColor="@color/jaune_douane"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_sous_titre_verification_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="PASSEPORT DU VOYAGEUR"
+                    android:textColor="@color/texte_discret_douane"
+                    android:textSize="11sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/jaune_douane" />
+
+                <!-- Nom du voyageur -->
+                <TextView
+                    android:id="@+id/tv_label_nom_verif_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NOM DU VOYAGEUR"
+                    android:textColor="@color/jaune_douane"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_nom_value_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Nom du voyageur"
+                    android:textColor="@color/texte_douane"
+                    android:textSize="16sp" />
+
+                <!-- Année de destination -->
+                <TextView
+                    android:id="@+id/tv_label_destination_verif_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="ANNÉE DE DESTINATION"
+                    android:textColor="@color/jaune_douane"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_destination_value_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="2050"
+                    android:textColor="@color/texte_douane"
+                    android:textSize="16sp" />
+
+                <!-- àge temporel -->
+                <TextView
+                    android:id="@+id/tv_label_age_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="ÂGE TEMPOREL"
+                    android:textColor="@color/jaune_douane"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_age_value_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="60 ans"
+                    android:textColor="@color/texte_douane"
+                    android:textSize="16sp" />
+
+                <!-- lmotif du voyage -->
+                <TextView
+                    android:id="@+id/tv_label_motif_verif_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:text="MOTIF DU VOYAGE"
+                    android:textColor="@color/jaune_douane"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_motif_value_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Tourisme"
+                    android:textColor="@color/texte_douane"
+                    android:textSize="16sp" />
+
+                <!-- Message de contrôle -->
+                <TextView
+                    android:id="@+id/tv_message_verification_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:background="@drawable/bg_champ_douane"
+                    android:padding="10dp"
+                    android:text="Veuillez examiner le profil du voyageur."
+                    android:textColor="@color/texte_douane"
+                    android:textSize="13sp" />
+
+                <!-- Bouton approuver -->
+                <Button
+                    android:id="@+id/btn_approuver_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:background="@drawable/bg_bouton_douane"
+                    android:backgroundTint="@null"
+                    android:text="Approuver le saut temporel"
+                    android:textColor="@color/fond_douane"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <!-- lbouton taa el refus -->
+                <Button
+                    android:id="@+id/btn_refuser_yb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:background="@drawable/bg_champ_douane"
+                    android:backgroundTint="@null"
+                    android:text="Refuser (Risque de paradoxe)"
+                    android:textColor="@color/texte_douane"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </RelativeLayout>
+
+</LinearLayout>
