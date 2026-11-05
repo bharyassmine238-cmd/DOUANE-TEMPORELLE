@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- les couleurs -->
+<resources>
+
+    <color name="fond_douane">#0B1030</color>
+    <color name="champ_douane">#151B45</color>
+    <color name="bordure_douane">#3A4180</color>
+    <color name="jaune_douane">#FFB300</color>
+    <color name="orange_douane">#FF6D00</color>
+    <color name="texte_douane">#FFFFFF</color>
+    <color name="texte_discret_douane">#8C93C8</color>
+    <color name="vert_approuve">#1B8E3E</color>
+    <color name="rouge_refuse">#C62828</color>
+    <!-- 9hedhuma lalwen lil main activity-->
+</resources>

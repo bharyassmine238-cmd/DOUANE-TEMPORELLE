@@ -1,19 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<!--Activité 1 : Le Formulaire d'Enregistrement (MainActivity) -->
+<!-- m -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- 1background degradation taa lalwen -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:importantForAccessibility="no"
+        android:scaleType="centerCrop"
+        android:src="@drawable/fond_voyage" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- titre -->
+            <TextView
+                android:id="@+id/tv_titre_xx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:letterSpacing="0.05"
+                android:text="TIME TRAVEL"
+                android:textColor="@color/texte_douane"
+                android:textSize="38sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_sous_titre_xx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:letterSpacing="0.05"
+                android:text="CUSTOMS ●"
+                android:textColor="@color/jaune_douane"
+                android:textSize="38sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="72dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="12dp"
+                android:background="@color/jaune_douane" />
+
+            <TextView
+                android:id="@+id/tv_slogan_xx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Poste de douane pour voyageurs du temps"
+                android:textColor="@color/texte_discret_douane"
+                android:textSize="14sp" />
+
+            <!-- image -->
+            <ImageView
+                android:id="@+id/img_voyage_xx"
+                android:layout_width="match_parent"
+                android:layout_height="419dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_champ_douane"
+                android:clipToOutline="true"
+                android:contentDescription="Image de voyage temporel"
+                android:scaleType="centerCrop"
+                android:src="@drawable/image_voyage" />
+
+            <!--lformulaire toul taht etswira -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bgcartedouane"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <!--nom  -->
+                    <TextView
+                        android:id="@+id/tv_label_nom_xx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:letterSpacing="0.1"
+                        android:text="NOM DU VOYAGEUR"
+                        android:textColor="@color/jaune_douane"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_nom_xx"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_champ_douane"
+                        android:hint="Ex : Marty McFly"
+                        android:importantForAutofill="no"
+                        android:inputType="textPersonName"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/texte_douane"
+                        android:textColorHint="@color/texte_discret_douane" />
+
+                    <!-- 5 : حقل سنة الميلاد -->
+                    <TextView
+                        android:id="@+id/tv_label_naissance_xx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:letterSpacing="0.1"
+                        android:text="ANNÉE DE NAISSANCE"
+                        android:textColor="@color/jaune_douane"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_naissance_xx"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_champ_douane"
+                        android:hint="Ex : 1990"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/texte_douane"
+                        android:textColorHint="@color/texte_discret_douane" />
+
+                    <!-- l3am li mechinlo -->
+                    <TextView
+                        android:id="@+id/tv_label_destination_xx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:letterSpacing="0.1"
+                        android:text="ANNÉE DE DESTINATION"
+                        android:textColor="@color/jaune_douane"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/et_destination_xx"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_champ_douane"
+                        android:hint="Ex : 2050"
+                        android:importantForAutofill="no"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:paddingHorizontal="16dp"
+                        android:textColor="@color/texte_douane"
+                        android:textColorHint="@color/texte_discret_douane" />
+
+                    <!-- sbab esafar -->
+                    <TextView
+                        android:id="@+id/tv_label_motif_xx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:letterSpacing="0.1"
+                        android:text="MOTIF DU VOYAGE"
+                        android:textColor="@color/jaune_douane"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_motif_xx"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/bg_champ_douane"
+                        android:orientation="vertical"
+                        android:padding="8dp">
+
+                        <RadioButton
+                            android:id="@+id/rb_tourisme_xx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/jaune_douane"
+                            android:checked="true"
+                            android:text="Tourisme"
+                            android:textColor="@color/texte_douane" />
+
+                        <RadioButton
+                            android:id="@+id/rb_modification_xx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/jaune_douane"
+                            android:text="Modification du passé"
+                            android:textColor="@color/texte_douane" />
+
+                        <RadioButton
+                            android:id="@+id/rb_fuite_xx"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:buttonTint="@color/jaune_douane"
+                            android:text="Fuite"
+                            android:textColor="@color/texte_douane" />
+                    </RadioGroup>
+
+                    <!-- bouton -->
+                    <Button
+                        android:id="@+id/btn_inspecter_xx"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:layout_marginTop="24dp"
+                        android:background="@drawable/bg_bouton_douane"
+                        android:backgroundTint="@null"
+                        android:letterSpacing="0.1"
+                        android:text="Inspecter le profil"
+                        android:textColor="@color/fond_douane"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
