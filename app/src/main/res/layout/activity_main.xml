@@ -14,7 +14,7 @@
         android:importantForAccessibility="no"
         android:scaleType="centerCrop"
         android:src="@drawable/fond_voyage" />
-
+    <!-- fatima c yasmine rani badalt plutot zedt yb hawka zid thbt -->
     <ScrollView
         android:id="@+id/main_yb"
         android:layout_width="match_parent"
