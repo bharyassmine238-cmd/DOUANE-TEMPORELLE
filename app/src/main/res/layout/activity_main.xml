@@ -22,7 +22,7 @@
         android:layout_height="match_parent"
         android:fillViewport="true"
         android:scrollbars="none"/>
-    <!-- hedhi hatitha bch maymchich etitre ta7t aka lbare detat : android:fitsSystemWindows="true" -->
+    <!-- hedhi hatitha bch maymchich etitre ta7t aka lbare detat voilà android:fitsSystemWindows="true" -->
 
         <LinearLayout
             android:layout_width="match_parent"
