@@ -17,10 +17,12 @@
     <!-- fatima c yasmine rani badalt plutot zedt yb hawka zid thbt -->
     <ScrollView
         android:id="@+id/main_yb"
+        android:fitsSystemWindows="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:scrollbars="none">
+        android:scrollbars="none"/>
+    <!-- hedhi hatitha bch maymchich etitre ta7t aka lbare detat : android:fitsSystemWindows="true" -->
 
         <LinearLayout
             android:layout_width="match_parent"
