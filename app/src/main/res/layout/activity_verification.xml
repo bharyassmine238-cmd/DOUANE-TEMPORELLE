@@ -1,10 +1,10 @@
-
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- Activité 2 (yass): Vérification du voyageur temporel -->
 
 <!-- Layout principal horizontal : image aalisar w les info aalimin -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_verification_yb"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -27,7 +27,7 @@
         android:src="@drawable/image_voyage" />
 
     <!-- Partie droite : 0.7 -->
-    <!-hne radit teleni afta7 vu que dhohrt yesr gham9a ة -->
+    <!--hne radit teleni afta7 vu que dhohrt yesr gham9a ة -->
     <RelativeLayout
         android:id="@+id/zone_informations_yb"
         android:layout_width="0dp"
