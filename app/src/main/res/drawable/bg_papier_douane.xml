@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- background warket lpassport li zina -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/texte_discret_douane" />
+    <stroke
+        android:width="2dp"
+        android:color="@color/or_passeport" />
+    <corners android:radius="12dp" />
+</shape>
