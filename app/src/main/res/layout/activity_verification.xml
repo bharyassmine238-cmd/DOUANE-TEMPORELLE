@@ -2,7 +2,7 @@
 
 <!-- Activité 2 (yass): Vérification du voyageur temporel -->
 
-<!-- Layout principal horizontal : image aalisar w les info aalimin -->
+<!-- Layout principal horizontal : image à gauche  w les info à droite -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_verification_yb"
@@ -10,7 +10,9 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:padding="12dp"
-    android:background="@color/fond_douane">
+    android:background="@color/fond_douane"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".VerificationActivity">>
 
     <!-- Image gauche : 0.3 -->
     <ImageView
@@ -175,7 +177,7 @@
                     android:text="Veuillez examiner le profil du voyageur."
                     android:textColor="@color/texte_douane"
                     android:textSize="13sp" />
-
+                <!-- ahla bik fatima rabi yehdik karna melowel mais pas grave sinon andi un ptit problm mahouch kaad yafichili ki nji naaml commit ?? -->
 
 
 
@@ -192,7 +194,7 @@
                     android:textColor="@color/encre_passeport"
                     android:textSize="10sp" />
 
-                <!-- lkhat kbal les btn  -->
+                <!-- aka lkhat kbal les btn  -->
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
@@ -200,7 +202,7 @@
                     android:background="@drawable/bg_pointille_douane"
                     android:layerType="software" />
 
-                <!-- 15 : زر الموافقة -->
+                <!--  bouton approuver -->
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_approuver_yb"
                     android:layout_width="match_parent"
@@ -212,7 +214,7 @@
                     android:textSize="13sp"
                     android:textStyle="bold" />
 
-                <!-- btn refu -->
+                <!-- btn refus -->
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_refuser_yb"
                     android:layout_width="match_parent"

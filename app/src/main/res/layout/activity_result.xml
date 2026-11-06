@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- Activité 3 (yass): Résultat -->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@drawable/fond_voyage">
+    android:background="@drawable/fond_voyage"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ResultActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -83,7 +89,7 @@
                 android:textColor="@color/jaune_douane"
                 android:textSize="18sp" />
 
-            <!-- last but not least i wanna thank me  -->
+            <!-- last but not least i wanna ... -->
             <TextView
                 android:id="@+id/tv_stamp_yb"
                 android:layout_width="wrap_content"
