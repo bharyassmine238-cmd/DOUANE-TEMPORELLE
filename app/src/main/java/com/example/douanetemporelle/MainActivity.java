@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Calendar;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText etNom, etNaissance, etDestination;
@@ -51,6 +53,18 @@ public class MainActivity extends AppCompatActivity {
             destination = Integer.parseInt(destinationTxt);
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Années invalides", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        int anneeActuelle = Calendar.getInstance().get(Calendar.YEAR);
+
+        if (naissance < 1900 || naissance > anneeActuelle) {
+            etNaissance.setError("Année de naissance entre 1900 et " + anneeActuelle);
+            return;
+        }
+
+        if (destination < 1000) {
+            etDestination.setError("Année de destination invalide (4 chiffres)");
             return;
         }
 
