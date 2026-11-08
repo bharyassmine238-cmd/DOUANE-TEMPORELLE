@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class VerificationActivity extends AppCompatActivity {
 
     // 1) عناصر الواجهة
-    TextView tvNomYb, tvAgeYb, tvMotifYb;
+    TextView tvNomYb, tvDestinationYb, tvAgeYb, tvMotifYb;
     Button btnApprouverYb, btnRefuserYb;
 
     @Override
@@ -19,9 +19,10 @@ public class VerificationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_verification);
 
         // 2) ربط العناصر بالـ XML
-        tvNomYb = findViewById(R.id.tv_nom_yb);
-        tvAgeYb = findViewById(R.id.tv_age_yb);
-        tvMotifYb = findViewById(R.id.tv_motif_yb);
+        tvNomYb = findViewById(R.id.tv_nom_value_yb);
+        tvDestinationYb = findViewById(R.id.tv_destination_value_yb);
+        tvAgeYb = findViewById(R.id.tv_age_value_yb);
+        tvMotifYb = findViewById(R.id.tv_motif_value_yb);
         btnApprouverYb = findViewById(R.id.btn_approuver_yb);
         btnRefuserYb = findViewById(R.id.btn_refuser_yb);
 
@@ -38,6 +39,7 @@ public class VerificationActivity extends AppCompatActivity {
 
         // 5) عرض الملخص
         tvNomYb.setText(nom);
+        tvDestinationYb.setText(String.valueOf(destination));
         tvAgeYb.setText(age + " ans");
         tvMotifYb.setText(motif);
 
@@ -46,6 +48,7 @@ public class VerificationActivity extends AppCompatActivity {
         boolean modification = motif != null && motif.contains("Modification");
         if (modification && estPremier(Math.abs(age))) {
             btnApprouverYb.setEnabled(false);
+            btnApprouverYb.setAlpha(0.4f);
         }
 
         // 7) زر الموافقة: إرسال القرار true
