@@ -8,45 +8,75 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Calendar;
-
+// الفئة الرئيسية: نموذج تسجيل المسافر عبر الزمن (النشاط الأول)
 public class MainActivity extends AppCompatActivity {
 
-    private EditText etNom, etNaissance, etDestination;
-    private RadioGroup rgMotif;
-    private Button btnInspecter;
+    // 1) تعريف عناصر الواجهة
+    EditText etNom, etNaissance, etDestination;
+    RadioGroup rgMotif;
+    Button btnInspecter;
+    // 1.1) ثوابت للحدود المسموح بها للسنوات
+    private static final int ANNEE_NAISSANCE_MIN = 1900;
+    private static final int ANNEE_DESTINATION_MIN = 1000;
+    private static final int ANNEE_DESTINATION_MAX = 9999;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        // 2) إضافة هامش حتى لا يختفي المحتوى تحت شريط الحالة
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_yb), (v, insets) -> {
+            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
+            return insets;
+        });
+
+        // 3) ربط العناصر بالـ XML عن طريق الـ id
         etNom = findViewById(R.id.et_nom_yb);
         etNaissance = findViewById(R.id.et_naissance_yb);
         etDestination = findViewById(R.id.et_destination_yb);
         rgMotif = findViewById(R.id.rg_motif_yb);
         btnInspecter = findViewById(R.id.btn_inspecter_yb);
 
+        // 4) عند الضغط على الزر نستدعي دالة الفحص
         btnInspecter.setOnClickListener(v -> inspecterProfil());
     }
 
     private void inspecterProfil() {
+        // 5) قراءة القيم المدخلة
         String nom = etNom.getText().toString().trim();
         String naissanceTxt = etNaissance.getText().toString().trim();
         String destinationTxt = etDestination.getText().toString().trim();
 
+        // 6) التحقق من الاسم
         if (nom.isEmpty()) {
             etNom.setError("Nom obligatoire");
+            etNom.requestFocus();
             return;
         }
 
-        if (naissanceTxt.isEmpty() || destinationTxt.isEmpty()) {
-            Toast.makeText(this, "Veuillez remplir les deux années", Toast.LENGTH_SHORT).show();
+        // 7) التحقق من أن السنتين غير فارغتين
+        if (naissanceTxt.isEmpty()) {
+            etNaissance.setError("Obligatoire");
+            etNaissance.requestFocus();
+            return;
+        }
+        if (destinationTxt.isEmpty()) {
+            etDestination.setError("Obligatoire");
+            etDestination.requestFocus();
             return;
         }
 
+        // 8) تحويل النصوص إلى أعداد مع معالجة الخطأ
         int naissance, destination;
         try {
             naissance = Integer.parseInt(naissanceTxt);
@@ -56,33 +86,31 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+// 9) الحصول على السنة الحالية
         int anneeActuelle = Calendar.getInstance().get(Calendar.YEAR);
 
-        if (naissance < 1900 || naissance > anneeActuelle) {
-            etNaissance.setError("Année de naissance entre 1900 et " + anneeActuelle);
+// 10) سنة الميلاد بين الحد الأدنى والسنة الحالية
+        if (naissance < ANNEE_NAISSANCE_MIN || naissance > anneeActuelle) {
+            etNaissance.setError("Année de naissance entre " + ANNEE_NAISSANCE_MIN + " et " + anneeActuelle);
+            etNaissance.requestFocus();
             return;
         }
-
-        if (destination < 1000) {
-            etDestination.setError("Année de destination invalide (4 chiffres)");
-            return;
-        }
-
-        int idChoisi = rgMotif.getCheckedRadioButtonId();
-        if (idChoisi == -1) {
+        // 11) التحقق من اختيار سبب السفر
+        int idMotif = rgMotif.getCheckedRadioButtonId();
+        if (idMotif == -1) {
             Toast.makeText(this, "Choisissez un motif de voyage", Toast.LENGTH_SHORT).show();
             return;
         }
-        RadioButton rbChoisi = findViewById(idChoisi);
-        String motif = rbChoisi.getText().toString();
+        RadioButton rbMotif = findViewById(idMotif);
+        String motif = rbMotif.getText().toString();
 
-        Intent intent = new Intent(MainActivity.this, VerificationActivity.class);
-
-        intent.putExtra(Cles.construireCle(Cles.MATRICULE, Cles.NOM), nom);
-        intent.putExtra(Cles.construireCle(Cles.MATRICULE, Cles.NAISSANCE), naissance);
-        intent.putExtra(Cles.construireCle(Cles.MATRICULE, Cles.DESTINATION), destination);
-        intent.putExtra(Cles.construireCle(Cles.MATRICULE, Cles.MOTIF), motif);
-
-        startActivity(intent);
+        // 12) إنشاء Intent صريح وإرسال البيانات بمفاتيح مبنية بدالة ثابتة
+        String m = IntentKeys.MATRICULE;
+        Intent i = new Intent(MainActivity.this, VerificationActivity.class);
+        i.putExtra(IntentKeys.cleNom(m), nom);
+        i.putExtra(IntentKeys.cleNaissance(m), naissance);
+        i.putExtra(IntentKeys.cleDestination(m), destination);
+        i.putExtra(IntentKeys.cleMotif(m), motif);
+        startActivity(i);
     }
 }

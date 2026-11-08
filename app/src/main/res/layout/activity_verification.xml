@@ -15,10 +15,14 @@
     tools:context=".VerificationActivity">>
 
     <!-- Image gauche : 0.3 -->
+
+    <!-- Partie droite : 0.7 -->
+    <!--hne radit teleni afta7 vu que dhohrt yesr gham9a ة -->
+
     <ImageView
         android:id="@+id/img_passport_yb"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
+        android:layout_height="277dp"
         android:layout_marginEnd="8dp"
         android:layout_weight="0.3"
         android:background="@drawable/bg_cadre_photo_douane"
@@ -28,8 +32,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/image_voyage" />
 
-    <!-- Partie droite : 0.7 -->
-    <!--hne radit teleni afta7 vu que dhohrt yesr gham9a ة -->
     <RelativeLayout
         android:id="@+id/zone_informations_yb"
         android:layout_width="0dp"
