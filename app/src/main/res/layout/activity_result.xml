@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- act3 -->
 <!--background yetbadel akhdher ki approuver a ahmer ki refusé -->
-<!-- ملاحظة: استبدل اللاحقة _xx في كل المعرفات بالأحرف الأولى لأحد أعضاء المجموعة -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -14,9 +14,9 @@
     tools:context=".ResultActivity">
     <!--hedhi code java-->
 
-    <!-- 1 : عنوان صغير (يحدده الكود البرمجي) -->
+    <!-- 1 titre -->
     <TextView
-        android:id="@+id/tv_titre_verdict_xx"
+        android:id="@+id/tv_titre_verdict_yb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:letterSpacing="0.2"
@@ -25,9 +25,9 @@
         android:textSize="14sp"
         android:textStyle="bold" />
 
-    <!-- 2 : الرمز الكبير الأبيض (✓ أو ✕) يحدده الكود البرمجي -->
+    <!-- les icones croix wla coche -->
     <TextView
-        android:id="@+id/tv_icone_xx"
+        android:id="@+id/tv_icone_yb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -36,9 +36,9 @@
         android:textSize="140sp"
         android:textStyle="bold" />
 
-    <!-- 3 : الرسالة الشخصية (Bon voyage [Nom] أو [Nom] est en état d'arrestation temporelle) -->
+    <!-- yatlaa kal bon voyage bel esm -->
     <TextView
-        android:id="@+id/tv_message_xx"
+        android:id="@+id/tv_message_yb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -49,9 +49,9 @@
         android:textStyle="bold"
         tools:text="Bon voyage Marty" />
 
-    <!-- 4 : جملة توضيحية صغيرة -->
+    <!-- 4jomla lil tawdhi7   -->
     <TextView
-        android:id="@+id/tv_detail_xx"
+        android:id="@+id/tv_detail_yb"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -61,9 +61,9 @@
         android:textColor="@color/texte_douane"
         android:textSize="15sp" />
 
-    <!-- 5 : زر مسافر جديد -->
+    <!-- 5btn new voyageur -->
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_nouveau_xx"
+        android:id="@+id/btn_nouveau_yb"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginTop="48dp"
