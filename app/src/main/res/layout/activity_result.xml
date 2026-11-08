@@ -47,7 +47,7 @@
         android:textColor="@color/texte_douane"
         android:textSize="28sp"
         android:textStyle="bold"
-        tools:text="Bon voyage Marty" />
+        tools:text="Bon voyage fatma" />
 
     <!-- 4jomla lil tawdhi7   -->
     <TextView
