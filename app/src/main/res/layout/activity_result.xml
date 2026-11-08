@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Acitivité 3(yass et fatma) Résultat-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_result_yb"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
@@ -28,8 +30,8 @@
             android:letterSpacing="0.2" />
 
         <TextView
-            android:layout_width="107dp"
-            android:layout_height="29dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
             android:text="Décision officielle"
             android:textColor="@color/texte_discret_douane"
@@ -83,7 +85,7 @@
                 android:textColor="@color/jaune_douane"
                 android:textSize="18sp" />
 
-            <!-- last but not least i wanna thank me  -->
+            <!-- last but not least i wanna   -->
             <TextView
                 android:id="@+id/tv_stamp_yb"
                 android:layout_width="wrap_content"

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <!-- Activité 2 (yass): Vérification du voyageur temporel -->
 
 <!-- Layout principal horizontal : image à gauche  w les info à droite -->
@@ -12,7 +11,7 @@
     android:padding="12dp"
     android:background="@color/fond_douane"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".VerificationActivity">>
+    tools:context=".VerificationActivity">
 
     <!-- Image gauche : 0.3 -->
 
