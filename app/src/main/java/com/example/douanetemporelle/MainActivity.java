@@ -86,20 +86,15 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-// 9) سنة الميلاد بين الحد الأدنى والسنة الحالية
+// 9) الحصول على السنة الحالية
+        int anneeActuelle = Calendar.getInstance().get(Calendar.YEAR);
+
+// 10) سنة الميلاد بين الحد الأدنى والسنة الحالية
         if (naissance < ANNEE_NAISSANCE_MIN || naissance > anneeActuelle) {
             etNaissance.setError("Année de naissance entre " + ANNEE_NAISSANCE_MIN + " et " + anneeActuelle);
             etNaissance.requestFocus();
             return;
         }
-
-// 10) سنة الوجهة من 4 أرقام
-        if (destination < ANNEE_DESTINATION_MIN || destination > ANNEE_DESTINATION_MAX) {
-            etDestination.setError("Année de destination invalide (4 chiffres)");
-            etDestination.requestFocus();
-            return;
-        }
-
         // 11) التحقق من اختيار سبب السفر
         int idMotif = rgMotif.getCheckedRadioButtonId();
         if (idMotif == -1) {
