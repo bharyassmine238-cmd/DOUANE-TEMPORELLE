@@ -9,7 +9,7 @@
     <color name="orange_douane">#FF6D00</color>
     <color name="texte_douane">#FFFFFF</color>
     <color name="texte_discret_douane">#8C93C8</color>
-    <color name="vert_approuve">#1B8E3E</color>
-    <color name="rouge_refuse">#C62828</color>
+    <color name="vert_approuve">#E90C5B23</color>
+    <color name="rouge_refuse">#D8952828</color>
     <!-- 9hedhuma lalwen lil main activity-->
 </resources>
