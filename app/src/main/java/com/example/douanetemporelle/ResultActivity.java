@@ -38,12 +38,12 @@ public class ResultActivity extends AppCompatActivity {
 
         // 4) تغيير لون الخلفية والرسالة حسب القرار
         if (approuve) {
-            rootYb.setBackgroundColor(Color.parseColor("#A5D6A7")); // أخضر
+            rootYb.setBackgroundColor(Color.parseColor("#2E7D32")); // أخضر
             tvVerdictYb.setText("Bon voyage " + nom);
             tvStampYb.setText("ADMIS");
             tvStampYb.setTextColor(Color.parseColor("#4CAF50"));
         } else {
-            rootYb.setBackgroundColor(Color.parseColor("#EF9A9A")); // أحمر
+            rootYb.setBackgroundColor(Color.parseColor("#C62828")); // أحمر
             tvVerdictYb.setText(nom + " est en état d'arrestation temporelle");
             tvStampYb.setText("REFUSÉ");
             tvStampYb.setTextColor(Color.parseColor("#F44336"));
