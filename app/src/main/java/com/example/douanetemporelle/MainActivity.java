@@ -15,7 +15,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Calendar;
-
+// الفئة الرئيسية: نموذج تسجيل المسافر عبر الزمن (النشاط الأول)
 public class MainActivity extends AppCompatActivity {
 
     // 1) تعريف عناصر الواجهة
