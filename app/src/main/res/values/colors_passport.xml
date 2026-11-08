@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ألوان خاصة بتصميم الجواز / التذكرة (الواجهة 2) -->
+<!-- colors passport -->
 <resources>
-    <!-- 1 : لون الورق (كريمي) -->
+
     <color name="papier_passeport">#F5ECD7</color>
-    <!-- 2 : لون الحبر (أزرق ليلي) -->
     <color name="encre_passeport">#14204A</color>
-    <!-- 3 : لون ذهبي غامق للعناوين والحدود -->
     <color name="or_passeport">#9A6A00</color>
-    <!-- 4 : لون الختم -->
     <color name="rouge_tampon_passeport">#C62828</color>
 </resources>
