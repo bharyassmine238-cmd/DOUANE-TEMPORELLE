@@ -22,6 +22,10 @@ public class MainActivity extends AppCompatActivity {
     EditText etNom, etNaissance, etDestination;
     RadioGroup rgMotif;
     Button btnInspecter;
+    // 1.1) ثوابت للحدود المسموح بها للسنوات
+    private static final int ANNEE_NAISSANCE_MIN = 1900;
+    private static final int ANNEE_DESTINATION_MIN = 1000;
+    private static final int ANNEE_DESTINATION_MAX = 9999;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,16 +86,15 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // 9) سنة الميلاد بين 1900 والسنة الحالية
-        int anneeActuelle = Calendar.getInstance().get(Calendar.YEAR);
-        if (naissance < 1900 || naissance > anneeActuelle) {
-            etNaissance.setError("Année de naissance entre 1900 et " + anneeActuelle);
+// 9) سنة الميلاد بين الحد الأدنى والسنة الحالية
+        if (naissance < ANNEE_NAISSANCE_MIN || naissance > anneeActuelle) {
+            etNaissance.setError("Année de naissance entre " + ANNEE_NAISSANCE_MIN + " et " + anneeActuelle);
             etNaissance.requestFocus();
             return;
         }
 
-        // 10) سنة الوجهة من 4 أرقام
-        if (destination < 1000 || destination > 9999) {
+// 10) سنة الوجهة من 4 أرقام
+        if (destination < ANNEE_DESTINATION_MIN || destination > ANNEE_DESTINATION_MAX) {
             etDestination.setError("Année de destination invalide (4 chiffres)");
             etDestination.requestFocus();
             return;
