@@ -15,14 +15,14 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Calendar;
-// الفئة الرئيسية: نموذج تسجيل المسافر عبر الزمن (النشاط الأول)
+//El classe el ra2isiya: formulaire mta3 tasjil el mousefer 3abr ezzaman (el activité el loula)
 public class MainActivity extends AppCompatActivity {
 
-    // 1) تعريف عناصر الواجهة
+    // 1)hedhom les donnés matloubin fl formulaire
     EditText etNom, etNaissance, etDestination;
     RadioGroup rgMotif;
     Button btnInspecter;
-    // 1.1) ثوابت للحدود المسموح بها للسنوات
+    // 1.1)3malt des limite lil a3wem (faza)
     private static final int ANNEE_NAISSANCE_MIN = 1900;
     private static final int ANNEE_DESTINATION_MIN = 1000;
     private static final int ANNEE_DESTINATION_MAX = 9999;
@@ -33,38 +33,38 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
-        // 2) إضافة هامش حتى لا يختفي المحتوى تحت شريط الحالة
+        // 2) zedt margin lil contenu
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_yb), (v, insets) -> {
             Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
             return insets;
         });
 
-        // 3) ربط العناصر بالـ XML عن طريق الـ id
+        // 3)Rbatna les element bl XML a travers les IDs
         etNom = findViewById(R.id.et_nom_yb);
         etNaissance = findViewById(R.id.et_naissance_yb);
         etDestination = findViewById(R.id.et_destination_yb);
         rgMotif = findViewById(R.id.rg_motif_yb);
         btnInspecter = findViewById(R.id.btn_inspecter_yb);
 
-        // 4) عند الضغط على الزر نستدعي دالة الفحص
+        // 4)Ki nenzlou 3al bouton n3ayetou lel fonction mta3 el vérification
         btnInspecter.setOnClickListener(v -> inspecterProfil());
     }
 
     private void inspecterProfil() {
-        // 5) قراءة القيم المدخلة
+        // 5) ya9ra les valeurs eli da5lnehom
         String nom = etNom.getText().toString().trim();
         String naissanceTxt = etNaissance.getText().toString().trim();
         String destinationTxt = etDestination.getText().toString().trim();
 
-        // 6) التحقق من الاسم
+        // 6)Nthabtou ml esm (mathaln tnjm tkoun chaine vide so lezm nthabtou)
         if (nom.isEmpty()) {
             etNom.setError("Nom obligatoire");
             etNom.requestFocus();
             return;
         }
 
-        // 7) التحقق من أن السنتين غير فارغتين
+        // 7) KIFKIF nthabtou ml a3wem
         if (naissanceTxt.isEmpty()) {
             etNaissance.setError("Obligatoire");
             etNaissance.requestFocus();
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        // 8) تحويل النصوص إلى أعداد مع معالجة الخطأ
+        // 8)Nbaddlou les textes l ar9am ghalta (+ error handling)
         int naissance, destination;
         try {
             naissance = Integer.parseInt(naissanceTxt);
@@ -86,16 +86,16 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-// 9) الحصول على السنة الحالية
+// 9)variable feha 3am sne
         int anneeActuelle = Calendar.getInstance().get(Calendar.YEAR);
 
-// 10) سنة الميلاد بين الحد الأدنى والسنة الحالية
+// 10) Sanet el milad lazem tkoun bin el had el adna w essna el hadhra
         if (naissance < ANNEE_NAISSANCE_MIN || naissance > anneeActuelle) {
             etNaissance.setError("Année de naissance entre " + ANNEE_NAISSANCE_MIN + " et " + anneeActuelle);
             etNaissance.requestFocus();
             return;
         }
-        // 11) التحقق من اختيار سبب السفر
+        // 11)nthabtou ml choix ta sbab esfar
         int idMotif = rgMotif.getCheckedRadioButtonId();
         if (idMotif == -1) {
             Toast.makeText(this, "Choisissez un motif de voyage", Toast.LENGTH_SHORT).show();
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         RadioButton rbMotif = findViewById(idMotif);
         String motif = rbMotif.getText().toString();
 
-        // 12) إنشاء Intent صريح وإرسال البيانات بمفاتيح مبنية بدالة ثابتة
+        // 12)Nasn3ou Intent (explicit) w nab3thou el données bel clés ta fonction
         String m = IntentKeys.MATRICULE;
         Intent i = new Intent(MainActivity.this, VerificationActivity.class);
         i.putExtra(IntentKeys.cleNom(m), nom);
