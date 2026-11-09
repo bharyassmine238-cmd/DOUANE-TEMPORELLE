@@ -13,53 +13,51 @@ public class ResultActivity extends AppCompatActivity {
 
     // 1) عناصر الواجهة
     View rootYb;
-    TextView tvNomYb, tvVerdictYb, tvStampYb;
-    Button btnRetourYb;
+    TextView tvIconeYb, tvMessageYb, tvDetailYb;
+    Button btnNouveauYb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        // 2) ربط العناصر بالـ XML
-        rootYb = findViewById(R.id.root_result_yb);
-        tvNomYb = findViewById(R.id.tv_nom_yb);
-        tvVerdictYb = findViewById(R.id.tv_verdict_yb);
-        tvStampYb = findViewById(R.id.tv_stamp_yb);
-        btnRetourYb = findViewById(R.id.btn_retour_yb);
+        // 2) ربط العناصر بالـ XML (نفس الـ id الموجودة في الملف)
+        rootYb = findViewById(R.id.main);
+        tvIconeYb = findViewById(R.id.tv_icone_yb);
+        tvMessageYb = findViewById(R.id.tv_message_yb);
+        tvDetailYb = findViewById(R.id.tv_detail_yb);
+        btnNouveauYb = findViewById(R.id.btn_nouveau_yb);
 
-        // 3) استقبال الاسم والقرار
+        // 3) استقبال الاسم والقرار (قيمة منطقية) بمفاتيح مبنية بالدالة الثابتة
         String m = IntentKeys.MATRICULE;
         Intent intent = getIntent();
         String nom = intent.getStringExtra(IntentKeys.cleNom(m));
         boolean approuve = intent.getBooleanExtra(IntentKeys.cleVerdict(m), false);
 
-        tvNomYb.setText(nom);
-
-        // 4) تغيير لون الخلفية والرسالة حسب القرار
+        // 4) تغيير لون الخلفية والرمز والرسالة حسب القرار
         if (approuve) {
             rootYb.setBackgroundColor(Color.parseColor("#2E7D32")); // أخضر
-            tvVerdictYb.setText("Bon voyage " + nom);
-            tvStampYb.setText("ADMIS");
-            tvStampYb.setTextColor(Color.parseColor("#4CAF50"));
+            tvIconeYb.setText("✓");
+            tvMessageYb.setText("Bon voyage " + nom);
+            tvDetailYb.setText("Le saut temporel est approuvé.");
         } else {
             rootYb.setBackgroundColor(Color.parseColor("#C62828")); // أحمر
-            tvVerdictYb.setText(nom + " est en état d'arrestation temporelle");
-            tvStampYb.setText("REFUSÉ");
-            tvStampYb.setTextColor(Color.parseColor("#F44336"));
+            tvIconeYb.setText("✗");
+            tvMessageYb.setText(nom + " est en état d'arrestation temporelle");
+            tvDetailYb.setText("Le saut temporel est refusé : risque de paradoxe.");
         }
 
-        // 5) حركة الختم: يبدأ كبيرا وشفافا ثم ينزل
-        tvStampYb.setScaleX(3f);
-        tvStampYb.setScaleY(3f);
-        tvStampYb.setAlpha(0f);
-        tvStampYb.animate()
+        // 5) حركة الرمز: يبدأ كبيرا وشفافا ثم يستقر
+        tvIconeYb.setScaleX(2f);
+        tvIconeYb.setScaleY(2f);
+        tvIconeYb.setAlpha(0f);
+        tvIconeYb.animate()
                 .scaleX(1f).scaleY(1f).alpha(1f)
-                .setStartDelay(400).setDuration(500)
+                .setStartDelay(300).setDuration(500)
                 .start();
 
         // 6) زر مسافر جديد: العودة للنشاط الأول وإغلاق كل النشاطات السابقة
-        btnRetourYb.setOnClickListener(v -> {
+        btnNouveauYb.setOnClickListener(v -> {
             Intent retour = new Intent(ResultActivity.this, MainActivity.class);
             retour.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(retour);
