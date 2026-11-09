@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ResultActivity extends AppCompatActivity {
 
-    // 1) عناصر الواجهة
+    // 1) El 3anaser mta3 el interface
     View rootYb;
     TextView tvIconeYb, tvMessageYb, tvDetailYb;
     Button btnNouveauYb;
@@ -21,33 +21,33 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-        // 2) ربط العناصر بالـ XML (نفس الـ id الموجودة في الملف)
+        // 2) Rbatna el 3anaser bel XML (nafs el id elli mawjouda fil fichier)
         rootYb = findViewById(R.id.main);
         tvIconeYb = findViewById(R.id.tv_icone_yb);
         tvMessageYb = findViewById(R.id.tv_message_yb);
         tvDetailYb = findViewById(R.id.tv_detail_yb);
         btnNouveauYb = findViewById(R.id.btn_nouveau_yb);
 
-        // 3) استقبال الاسم والقرار (قيمة منطقية) بمفاتيح مبنية بالدالة الثابتة
+        // 3) Nesta9blou el esm w el choix (valeur booléenne) bel clés ta fonction
         String m = IntentKeys.MATRICULE;
         Intent intent = getIntent();
         String nom = intent.getStringExtra(IntentKeys.cleNom(m));
         boolean approuve = intent.getBooleanExtra(IntentKeys.cleVerdict(m), false);
 
-        // 4) تغيير لون الخلفية والرمز والرسالة حسب القرار
+        // 4) Nbaddlou loun el background w el ramz w el message 7asb el choix
         if (approuve) {
-            rootYb.setBackgroundColor(Color.parseColor("#2E7D32")); // أخضر
+            rootYb.setBackgroundColor(Color.parseColor("#2E7D32")); // lekhdhar
             tvIconeYb.setText("✓");
             tvMessageYb.setText("Bon voyage " + nom);
             tvDetailYb.setText("Le saut temporel est approuvé.");
         } else {
-            rootYb.setBackgroundColor(Color.parseColor("#C62828")); // أحمر
+            rootYb.setBackgroundColor(Color.parseColor("#C62828")); // lahmar
             tvIconeYb.setText("✗");
             tvMessageYb.setText(nom + " est en état d'arrestation temporelle");
             tvDetailYb.setText("Le saut temporel est refusé : risque de paradoxe.");
         }
 
-        // 5) حركة الرمز: يبدأ كبيرا وشفافا ثم يستقر
+        // 5) faza ta ramz: yebda kbir w transparent w ba3d yyoked stable
         tvIconeYb.setScaleX(2f);
         tvIconeYb.setScaleY(2f);
         tvIconeYb.setAlpha(0f);
@@ -56,7 +56,7 @@ public class ResultActivity extends AppCompatActivity {
                 .setStartDelay(300).setDuration(500)
                 .start();
 
-        // 6) زر مسافر جديد: العودة للنشاط الأول وإغلاق كل النشاطات السابقة
+        // 6) bouton "mousefer jdid": narj3ou lel activité el loula w nsakrou kol activités elli 9balha
         btnNouveauYb.setOnClickListener(v -> {
             Intent retour = new Intent(ResultActivity.this, MainActivity.class);
             retour.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

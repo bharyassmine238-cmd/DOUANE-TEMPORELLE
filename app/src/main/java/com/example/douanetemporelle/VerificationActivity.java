@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class VerificationActivity extends AppCompatActivity {
 
-    // 1) عناصر الواجهة
+    // 1) El 3anaser mta3 el interface
     TextView tvNomYb, tvDestinationYb, tvAgeYb, tvMotifYb;
     Button btnApprouverYb, btnRefuserYb;
 
@@ -18,7 +18,7 @@ public class VerificationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verification);
 
-        // 2) ربط العناصر بالـ XML
+        // 2) Nrabtou el 3anaser bel XML
         tvNomYb = findViewById(R.id.tv_nom_value_yb);
         tvDestinationYb = findViewById(R.id.tv_destination_value_yb);
         tvAgeYb = findViewById(R.id.tv_age_value_yb);
@@ -26,7 +26,7 @@ public class VerificationActivity extends AppCompatActivity {
         btnApprouverYb = findViewById(R.id.btn_approuver_yb);
         btnRefuserYb = findViewById(R.id.btn_refuser_yb);
 
-        // 3) استقبال البيانات بمفاتيح مبنية بالدالة الثابتة
+        // 3) Nesta9blou el données bel clés elli matnaya bel fonction
         String m = IntentKeys.MATRICULE;
         Intent intent = getIntent();
         String nom = intent.getStringExtra(IntentKeys.cleNom(m));
@@ -34,31 +34,31 @@ public class VerificationActivity extends AppCompatActivity {
         int destination = intent.getIntExtra(IntentKeys.cleDestination(m), 0);
         String motif = intent.getStringExtra(IntentKeys.cleMotif(m));
 
-        // 4) حساب العمر الزمني (الفرق بين سنة الوجهة وسنة الميلاد)
+        // 4) nehsbou el 3mor ezzamani (el farq bin 3am el dest w 3am el wileda)
         int age = destination - naissance;
 
-        // 5) عرض الملخص
+        // 5) nhotou resumé
         tvNomYb.setText(nom);
         tvDestinationYb.setText(String.valueOf(destination));
         tvAgeYb.setText(age + " ans");
         tvMotifYb.setText(motif);
 
-        // 6) تعطيل زر الموافقة إذا كان السبب "Modification du passé"
-        //    والفرق (بالقيمة المطلقة) عددا أوليا
+        // 6) N3attlou btn el mowafa9a ken el sabeb "Modification du passé"
+        //    w el farq (bel 9ima el motlaka) 3adad awwali
         boolean modification = motif != null && motif.contains("Modification");
         if (modification && estPremier(Math.abs(age))) {
             btnApprouverYb.setEnabled(false);
             btnApprouverYb.setAlpha(0.4f);
         }
 
-        // 7) زر الموافقة: إرسال القرار true
+        // 7) bouton el mowafa9a: nab3thou el decision true
         btnApprouverYb.setOnClickListener(v -> ouvrirVerdict(nom, true));
 
-        // 8) زر الرفض: إرسال القرار false
+        // 8) bouton el rafdh: nab3thou el decision false
         btnRefuserYb.setOnClickListener(v -> ouvrirVerdict(nom, false));
     }
 
-    // 9) فتح شاشة القرار مع الاسم والقرار (قيمة منطقية)
+    // 9) Nfat7ou écran ta decision m3a el esm w el choix (valeur booléenne)
     private void ouvrirVerdict(String nom, boolean approuve) {
         String m = IntentKeys.MATRICULE;
         Intent i = new Intent(VerificationActivity.this, ResultActivity.class);
@@ -67,7 +67,7 @@ public class VerificationActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    // 10) اختبار العدد الأولي
+    // 10) ntestiw el nombre premier
     private boolean estPremier(int n) {
         if (n < 2) return false;
         for (int d = 2; d * d <= n; d++) {
