@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- colors passport -->
 <resources>
-
-    <color name="papier_passeport">#F5ECD7</color>
-    <color name="encre_passeport">#14204A</color>
-    <color name="or_passeport">#9A6A00</color>
-    <color name="rouge_tampon_passeport">#C62828</color>
+    <color name="fond_passeport">#14263A</color>
+    <color name="encre_passeport">#FFFFFF</color>
+    <color name="or_passeport">#FFD477</color>
+    <color name="bordure_passeport">#FFB52E</color>
 </resources>

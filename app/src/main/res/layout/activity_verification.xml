@@ -15,22 +15,20 @@
 
     <!-- Image gauche : 0.3 -->
 
-    <!-- Partie droite : 0.7 -->
     <!--hne radit teleni afta7 vu que dhohrt yesr gham9a ة -->
 
     <ImageView
         android:id="@+id/img_passport_yb"
         android:layout_width="0dp"
-        android:layout_height="277dp"
-        android:layout_marginEnd="8dp"
+        android:layout_height="match_parent"
         android:layout_weight="0.3"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/bg_cadre_photo_douane"
         android:clipToOutline="true"
         android:contentDescription="Image du passeport temporel"
-        android:padding="3dp"
         android:scaleType="centerCrop"
         android:src="@drawable/image_voyage" />
-
+    <!-- Partie droite : 0.7 -->
     <RelativeLayout
         android:id="@+id/zone_informations_yb"
         android:layout_width="0dp"
@@ -68,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:letterSpacing="0.15"
+                    android:letterSpacing="0.1"
                     android:text="PASSEPORT DU VOYAGEUR"
                     android:textColor="@color/or_passeport"
                     android:textSize="12sp"
@@ -76,11 +74,10 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="4dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_height="3dp"
+                    android:layout_marginTop="12dp"
                     android:layout_marginBottom="14dp"
-                    android:background="@drawable/bg_pointille_douane"
-                    android:layerType="software" />
+                    android:background="@drawable/bg_pointille_douane" />
                 <!-- Nom du voyageur -->
                 <TextView
                     android:id="@+id/tv_label_nom_verif_yb"
@@ -95,7 +92,7 @@
                     android:id="@+id/tv_nom_value_yb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="monospace"
                     android:text="Nom du voyageur"
                     android:textColor="@color/encre_passeport"
@@ -116,7 +113,7 @@
                     android:id="@+id/tv_destination_value_yb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="monospace"
                     android:text="2050"
                     android:textColor="@color/encre_passeport"
@@ -137,7 +134,7 @@
                     android:id="@+id/tv_age_value_yb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="5dp"
                     android:fontFamily="monospace"
                     android:text="60 ans"
                     android:textColor="@color/encre_passeport"
@@ -200,8 +197,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/bg_pointille_douane"
-                    android:layerType="software" />
+                    android:background="@drawable/bg_pointille_douane" />
 
                 <!--  bouton approuver -->
                 <androidx.appcompat.widget.AppCompatButton

@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fond_douane"
     tools:context=".MainActivity">
 
     <!-- background
@@ -16,14 +17,22 @@
         android:scaleType="centerCrop"
         android:src="@drawable/fond_voyage" />
 
-    <!-- 3 : ScrollView  tabda thabet wtalaa -->
+    <!-- c yassmine 7atit el vidéo fl background -->
+    <VideoView
+        android:id="@+id/video_portail_yb"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99080D1C" />
+    <!-- 3 : ScrollView  tabda thabet wtalaa -->
     <ScrollView
         android:id="@+id/main_yb"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
-        android:fitsSystemWindows="true"
         android:scrollbars="none">
 
         <!--ili fih les champs -->
@@ -31,32 +40,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="22dp">
 
             <!-- titre time travel -->
             <TextView
                 android:id="@+id/tv_titre_yb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:letterSpacing="0.05"
+                android:layout_marginTop="16dp"
+                android:letterSpacing="0.08"
                 android:text="TIME TRAVEL"
                 android:textColor="@color/texte_douane"
-                android:textSize="35sp"
+                android:textSize="32sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_sous_titre_yb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:letterSpacing="0.05"
+                android:letterSpacing="0.12"
                 android:text="CUSTOMS ●"
                 android:textColor="@color/jaune_douane"
-                android:textSize="32sp"
+                android:textSize="29sp"
                 android:textStyle="bold" />
 
             <View
-                android:layout_width="72dp"
+                android:layout_width="65dp"
                 android:layout_height="3dp"
                 android:layout_marginTop="12dp"
                 android:background="@color/jaune_douane" />
@@ -74,8 +83,8 @@
             <ImageView
                 android:id="@+id/img_voyage_yb"
                 android:layout_width="match_parent"
-                android:layout_height="152dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="145dp"
+                android:layout_marginTop="22dp"
                 android:background="@drawable/bg_champ_douane"
                 android:clipToOutline="true"
                 android:contentDescription="Image de voyage temporel"
@@ -86,7 +95,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="20dp"
                 android:background="@drawable/bgcartedouane"
                 android:orientation="vertical"
                 android:padding="20dp">
@@ -96,7 +105,6 @@
                     android:id="@+id/tv_label_nom_yb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:letterSpacing="0.1"
                     android:text="NOM DU VOYAGEUR"
                     android:textColor="@color/jaune_douane"
                     android:textSize="12sp"
@@ -111,7 +119,7 @@
                     android:hint="Ex : Fatma Ben Salem"
                     android:importantForAutofill="no"
                     android:inputType="textPersonName"
-                    android:paddingHorizontal="16dp"
+                    android:paddingHorizontal="14dp"
                     android:textColor="@color/texte_douane"
                     android:textColorHint="@color/texte_discret_douane" />
 
@@ -137,7 +145,7 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:maxLength="4"
-                    android:paddingHorizontal="16dp"
+                    android:paddingHorizontal="14dp"
                     android:textColor="@color/texte_douane"
                     android:textColorHint="@color/texte_discret_douane" />
 
@@ -163,7 +171,7 @@
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:maxLength="4"
-                    android:paddingHorizontal="16dp"
+                    android:paddingHorizontal="14dp"
                     android:textColor="@color/texte_douane"
                     android:textColorHint="@color/texte_discret_douane" />
 
@@ -186,7 +194,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/bg_champ_douane"
                     android:orientation="vertical"
-                    android:padding="8dp">
+                    android:padding="10dp">
 
                     <RadioButton
                         android:id="@+id/rb_tourisme_yb"
@@ -221,12 +229,22 @@
                     android:layout_height="56dp"
                     android:layout_marginTop="24dp"
                     android:background="@drawable/bg_bouton_douane"
-                    android:letterSpacing="0.1"
+                    android:letterSpacing="0.05"
                     android:text="Inspecter le profil"
                     android:textColor="@color/fond_douane"
-                    android:textSize="16sp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
             </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="20dp"
+                android:text="TIME PORTAL • TEMPORAL SECURITY"
+                android:textColor="@color/texte_discret_douane"
+                android:textSize="10sp"
+                android:letterSpacing="0.08" />
         </LinearLayout>
     </ScrollView>
 </FrameLayout>
