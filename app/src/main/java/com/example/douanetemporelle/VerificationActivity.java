@@ -2,10 +2,15 @@ package com.example.douanetemporelle;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class VerificationActivity extends AppCompatActivity {
 
@@ -16,7 +21,17 @@ public class VerificationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_verification);
+
+        // إضافة جديدة: هامش حتى لا يختفي المحتوى تحت شريط الحالة (مع الحفاظ على هامش 12dp)
+        View racine = findViewById(R.id.layout_verification_yb);
+        final int marge = (int) (12 * getResources().getDisplayMetrics().density);
+        ViewCompat.setOnApplyWindowInsetsListener(racine, (v, insets) -> {
+            Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(bars.left + marge, bars.top + marge, bars.right + marge, bars.bottom + marge);
+            return insets;
+        });
 
         // 2) Nrabtou el 3anaser bel XML
         tvNomYb = findViewById(R.id.tv_nom_value_yb);
@@ -29,7 +44,8 @@ public class VerificationActivity extends AppCompatActivity {
         // 3) Nesta9blou el données bel clés elli matnaya bel fonction
         String m = IntentKeys.MATRICULE;
         Intent intent = getIntent();
-        String nom = intent.getStringExtra(IntentKeys.cleNom(m));
+        String nomRecu = intent.getStringExtra(IntentKeys.cleNom(m));
+        String nom = (nomRecu == null || nomRecu.trim().isEmpty()) ? "Voyageur" : nomRecu;
         int naissance = intent.getIntExtra(IntentKeys.cleNaissance(m), 0);
         int destination = intent.getIntExtra(IntentKeys.cleDestination(m), 0);
         String motif = intent.getStringExtra(IntentKeys.cleMotif(m));
@@ -40,7 +56,7 @@ public class VerificationActivity extends AppCompatActivity {
         // 5) nhotou resumé
         tvNomYb.setText(nom);
         tvDestinationYb.setText(String.valueOf(destination));
-        tvAgeYb.setText(age + " ans");
+        tvAgeYb.setText(age >= 0 ? age + " ans" : "Pas encore né (" + Math.abs(age) + " ans avant)");
         tvMotifYb.setText(motif);
 
         // 6) N3attlou btn el mowafa9a ken el sabeb "Modification du passé"

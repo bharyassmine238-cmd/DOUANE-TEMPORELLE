@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <!-- Activité 2 (yass): Vérification du voyageur temporel -->
 
-<!-- Layout principal horizontal : image à gauche  w les info à droite -->
+<!-- Layout principal horizontal : image aalisar w les info aalimin -->
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_verification_yb"
@@ -9,26 +10,26 @@
     android:layout_height="match_parent"
     android:orientation="horizontal"
     android:padding="12dp"
-    android:background="@color/fond_douane"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".VerificationActivity">
+    android:background="@color/fond_douane">
 
     <!-- Image gauche : 0.3 -->
 
+    <!-- Partie droite : 0.7 -->
     <!--hne radit teleni afta7 vu que dhohrt yesr gham9a ة -->
 
     <ImageView
         android:id="@+id/img_passport_yb"
         android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="0.3"
+        android:layout_height="277dp"
         android:layout_marginEnd="8dp"
+        android:layout_weight="0.3"
         android:background="@drawable/bg_cadre_photo_douane"
         android:clipToOutline="true"
         android:contentDescription="Image du passeport temporel"
+        android:padding="3dp"
         android:scaleType="centerCrop"
         android:src="@drawable/image_voyage" />
-    <!-- Partie droite : 0.7 -->
+
     <RelativeLayout
         android:id="@+id/zone_informations_yb"
         android:layout_width="0dp"
@@ -66,7 +67,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:letterSpacing="0.1"
+                    android:letterSpacing="0.15"
                     android:text="PASSEPORT DU VOYAGEUR"
                     android:textColor="@color/or_passeport"
                     android:textSize="12sp"
@@ -74,10 +75,11 @@
 
                 <View
                     android:layout_width="match_parent"
-                    android:layout_height="3dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="14dp"
-                    android:background="@drawable/bg_pointille_douane" />
+                    android:background="@drawable/bg_pointille_douane"
+                    android:layerType="software" />
                 <!-- Nom du voyageur -->
                 <TextView
                     android:id="@+id/tv_label_nom_verif_yb"
@@ -92,7 +94,7 @@
                     android:id="@+id/tv_nom_value_yb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="4dp"
                     android:fontFamily="monospace"
                     android:text="Nom du voyageur"
                     android:textColor="@color/encre_passeport"
@@ -113,7 +115,7 @@
                     android:id="@+id/tv_destination_value_yb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="4dp"
                     android:fontFamily="monospace"
                     android:text="2050"
                     android:textColor="@color/encre_passeport"
@@ -134,7 +136,7 @@
                     android:id="@+id/tv_age_value_yb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="4dp"
                     android:fontFamily="monospace"
                     android:text="60 ans"
                     android:textColor="@color/encre_passeport"
@@ -175,7 +177,7 @@
                     android:text="Veuillez examiner le profil du voyageur."
                     android:textColor="@color/texte_douane"
                     android:textSize="13sp" />
-                <!-- ahla bik fatima rabi yehdik karna melowel mais pas grave sinon andi un ptit problm mahouch kaad yafichili ki nji naaml commit ?? -->
+
 
 
 
@@ -192,14 +194,15 @@
                     android:textColor="@color/encre_passeport"
                     android:textSize="10sp" />
 
-                <!-- aka lkhat kbal les btn  -->
+                <!-- lkhat kbal les btn  -->
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="4dp"
                     android:layout_marginTop="12dp"
-                    android:background="@drawable/bg_pointille_douane" />
+                    android:background="@drawable/bg_pointille_douane"
+                    android:layerType="software" />
 
-                <!--  bouton approuver -->
+                <!-- 15 : زر الموافقة -->
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_approuver_yb"
                     android:layout_width="match_parent"
@@ -211,7 +214,7 @@
                     android:textSize="13sp"
                     android:textStyle="bold" />
 
-                <!-- btn refus -->
+                <!-- btn refu -->
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_refuser_yb"
                     android:layout_width="match_parent"
