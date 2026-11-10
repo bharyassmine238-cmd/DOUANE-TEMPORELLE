@@ -2,4 +2,6 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="vert_approuve">#DC065D08</color>
+    <color name="rouge_refuse">#F44336</color>
 </resources>
