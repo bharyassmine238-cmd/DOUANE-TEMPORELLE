@@ -202,24 +202,24 @@
                         android:layout_height="wrap_content"
                         android:buttonTint="@color/jaune_douane"
                         android:checked="true"
-                        android:text="Tourisme"
-                        android:textColor="@color/texte_douane" />
+                        android:textColor="@color/texte_douane"
+                        android:text="@string/motif_tourisme" />
 
                     <RadioButton
                         android:id="@+id/rb_modification_yb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:buttonTint="@color/jaune_douane"
-                        android:text="Modification du passé"
-                        android:textColor="@color/texte_douane" />
+                        android:textColor="@color/texte_douane"
+                        android:text="@string/motif_modification_passe"/>
 
                     <RadioButton
                         android:id="@+id/rb_fuite_yb"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:buttonTint="@color/jaune_douane"
-                        android:text="Fuite"
-                        android:textColor="@color/texte_douane" />
+                        android:textColor="@color/texte_douane"
+                        android:text="@string/motif_fuite"/>
                 </RadioGroup>
 
                 <!-- btn-->

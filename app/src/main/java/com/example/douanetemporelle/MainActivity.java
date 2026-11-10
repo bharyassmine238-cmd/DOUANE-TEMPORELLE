@@ -95,10 +95,28 @@ public class MainActivity extends AppCompatActivity {
             etNaissance.requestFocus();
             return;
         }
+        // c yasmine zedet'ha bch nverifi enou el date de dest mehich kbal el date de naissance
+        if (destination < ANNEE_DESTINATION_MIN || destination > ANNEE_DESTINATION_MAX) {
+            etDestination.setError("Année entre " + ANNEE_DESTINATION_MIN + " et " + ANNEE_DESTINATION_MAX);
+            etDestination.requestFocus();
+            return;
+        }
+        if (destination <= naissance) {
+            etDestination.setError("La destination doit être après la naissance");
+            etDestination.requestFocus();
+            return;
+        }//bon kont najem naamel alerte zeda mais seterror plus simple hasit'ha sinon bch njarabha fl motif
+
+
+
         // 11)nthabtou ml choix ta sbab esfar
         int idMotif = rgMotif.getCheckedRadioButtonId();
         if (idMotif == -1) {
-            Toast.makeText(this, "Choisissez un motif de voyage", Toast.LENGTH_SHORT).show();
+            new androidx.appcompat.app.AlertDialog.Builder(this)
+                    .setTitle("Motif manquant")
+                    .setMessage("Choisissez un motif de voyage.")
+                    .setPositiveButton("OK", null)
+                    .show();
             return;
         }
         RadioButton rbMotif = findViewById(idMotif);

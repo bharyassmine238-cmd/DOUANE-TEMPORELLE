@@ -55,7 +55,15 @@ public class VerificationActivity extends AppCompatActivity {
         btnApprouverYb.setOnClickListener(v -> ouvrirVerdict(nom, true));
 
         // 8) bouton el rafdh: nab3thou el decision false
-        btnRefuserYb.setOnClickListener(v -> ouvrirVerdict(nom, false));
+
+        // c yasmine encore 1 fois hehe j'ai mis alerte bch nconfirmi kbal el refus taarech aliha tnajem tkoun amalt clic par erreur mch belaani
+        btnRefuserYb.setOnClickListener(v ->
+                new androidx.appcompat.app.AlertDialog.Builder(this)
+                        .setTitle("Confirmation")
+                        .setMessage("Refuser ce voyageur ?")
+                        .setPositiveButton("Oui", (d, w) -> ouvrirVerdict(nom, false))
+                        .setNegativeButton("Annuler", null)
+                        .show());
     }
 
     // 9) Nfat7ou écran ta decision m3a el esm w el choix (valeur booléenne)
