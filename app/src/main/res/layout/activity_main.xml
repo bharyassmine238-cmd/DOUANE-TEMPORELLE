@@ -9,15 +9,7 @@
     tools:context=".MainActivity">
 
     <!-- background
-     -->
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:importantForAccessibility="no"
-        android:scaleType="centerCrop"
-        android:src="@drawable/fond_voyage" />
-
-    <!-- c yassmine 7atit el vidéo fl background cc fatma yay -->
+    <!- c yassmine 7atit el vidéo fl background cc fatma yay -->
     <VideoView
         android:id="@+id/video_portail_yb"
         android:layout_width="match_parent"
@@ -80,18 +72,19 @@
                 android:textSize="14sp" />
 
             <!-- img -->
+
+            <!--les champs li bch taamarhom taht etaswira toul -->
             <ImageView
                 android:id="@+id/img_voyage_yb"
                 android:layout_width="match_parent"
-                android:layout_height="145dp"
+                android:layout_height="221dp"
                 android:layout_marginTop="22dp"
                 android:background="@drawable/bg_champ_douane"
                 android:clipToOutline="true"
                 android:contentDescription="Image de voyage temporel"
                 android:scaleType="centerCrop"
-                android:src="@drawable/image_voyage" />
+                android:src="@drawable/activite2" />
 
-            <!--les champs li bch taamarhom taht etaswira toul -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

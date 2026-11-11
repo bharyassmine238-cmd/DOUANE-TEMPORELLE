@@ -19,7 +19,7 @@
 
     <ImageView
         android:id="@+id/img_passport_yb"
-        android:layout_width="28dp"
+        android:layout_width="23dp"
         android:layout_height="161dp"
         android:layout_marginEnd="8dp"
         android:layout_weight="0.3"
@@ -28,7 +28,7 @@
         android:contentDescription="Image du passeport temporel"
         android:padding="3dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/pass3" />
+        android:src="@drawable/pass4" />
 
     <RelativeLayout
         android:id="@+id/zone_informations_yb"
