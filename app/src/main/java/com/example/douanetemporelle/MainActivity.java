@@ -8,6 +8,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.widget.VideoView;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -15,8 +19,12 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Calendar;
+
+
 //El classe el ra2isiya: formulaire mta3 tasjil el mousefer 3abr ezzaman (el activité el loula)
 public class MainActivity extends AppCompatActivity {
+    private VideoView videoFond;
+    private int position = 0;
 
     // 1)hedhom les donnés matloubin fl formulaire
     EditText etNom, etNaissance, etDestination;
@@ -32,6 +40,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+        videoFond = findViewById(R.id.video_portail_yb);
+        Uri uri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.portail_temporel);
+        videoFond.setVideoURI(uri);
+
+        videoFond.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.setLooping(true);
+                mp.setVolume(0f, 0f);
+                mp.setVideoScalingMode(MediaPlayer.VIDEO_SCALING_MODE_SCALE_TO_FIT_WITH_CROPPING);
+            }
+        });
 
         // 2) zedt margin lil contenu
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main_yb), (v, insets) -> {
@@ -49,6 +69,19 @@ public class MainActivity extends AppCompatActivity {
 
         // 4)Ki nenzlou 3al bouton n3ayetou lel fonction mta3 el vérification
         btnInspecter.setOnClickListener(v -> inspecterProfil());
+    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        videoFond.seekTo(position);
+        videoFond.start();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        position = videoFond.getCurrentPosition();
+        videoFond.pause();
     }
 
     private void inspecterProfil() {

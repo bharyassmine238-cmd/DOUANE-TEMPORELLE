@@ -9,7 +9,7 @@
     tools:context=".MainActivity">
 
     <!-- background
-    <!- c yassmine 7atit el vidéo fl background cc fatma yay -->
+    <!-- c yassmine 7atit el vidéo fl background cc fatma yay -->
     <VideoView
         android:id="@+id/video_portail_yb"
         android:layout_width="match_parent"
