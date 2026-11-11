@@ -8,4 +8,6 @@
     <color name="texte_douane">#FFFFFF</color>
     <color name="texte_discret_douane">#A9B6C9</color>
     <color name="bordure_douane">#665D4930</color>
+    <color name="orange_douane">#FF8C1A</color>
+    <color name="champ_douane">#1C2E45</color>
 </resources>
